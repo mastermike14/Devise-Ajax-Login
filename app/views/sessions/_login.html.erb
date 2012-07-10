@@ -1,0 +1,27 @@
+ <div class="dropdown-menu">
+		<div id="errors"></div>
+	<script type="text/javascript">var errors = '<%= Time.now %>' </script>
+             <%= form_for("user", :url => user_session_path, :html => {:id => "sign_in", :class => "span3"}, :remote => true, :format => :json) do |f| %>
+					
+				<fieldset class='textbox login'>
+				<%= f.label :username%>
+			    <%= f.text_field :email %>
+			    <%= f.label :password %>
+			    <%= f.password_field :password %>
+			   
+			 	<label class="checkbox">
+				         <%= f.check_box :remember_me %> Remember Me
+				        </label>
+			 
+			    <%= f.submit 'Sign in', :class => 'btn', 'data-disable-with' => "please wait...." %>
+			    <%= link_to "Forgot your password?", new_password_path('user') %>
+					<div id="status"></div>
+					</fieldset>
+			  <% end %>
+			<div class="divider"></div>
+			<div class="span3">
+			<p>	Not a member yet?  <%= link_to 'Sign Up', new_user_registration_path %> </p>
+				</div>
+            </div>
+
+

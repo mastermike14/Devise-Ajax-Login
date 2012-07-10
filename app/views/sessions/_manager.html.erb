@@ -1,0 +1,9 @@
+<div id="user_login_box">
+
+<% if(signed_in?) %>
+  <%= render :partial => 'sessions/logout' %>
+<% else %>
+  <%= render :partial => 'sessions/login' %>
+<% end %>
+
+</div>
